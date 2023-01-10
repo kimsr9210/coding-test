@@ -1,5 +1,7 @@
 package lv0;
 
+import java.util.Arrays;
+
 class Lv0_013 {
     public static void  main(String[] args) {
 		int[] sides = {199, 72, 222};
@@ -14,11 +16,9 @@ class Lv0_013 {
 		 * 세 변으로 삼각형을 만들 수 있다면 1, 
 		 * 만들 수 없다면 2를 return하도록 solution 함수를 완성해주세요.
 		 */
-        int answer = 0;
         int result = 0; 
     	Arrays.sort(sides);
-    	answer = (result = sides[0] + sides[1] > sides[2] ? 1 : 2 );
-    	System.out.println();
+    	int answer = (result = sides[0] + sides[1] > sides[2] ? 1 : 2 );
         return answer;
     }
 }
