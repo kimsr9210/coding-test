@@ -1,6 +1,6 @@
 package lv0;
 
-class test01 {
+class Lv0_001 {
     public static void  main(String[] args) {
         System.out.println(solution(15));
     }
