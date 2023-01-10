@@ -13,7 +13,6 @@ class Lv0_003 {
     			answer++;
     		}
     	}
-		System.out.println(answer);
 		return answer;
     }
 }
