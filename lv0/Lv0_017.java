@@ -5,7 +5,7 @@ import java.util.Arrays;
 class Lv0_017 {
     public static void  main(String[] args) {
       int[] numbers = {0, 31, 24, 10, 1, 9};
-        System.out.println(solution(numbers));
+      System.out.println(solution(numbers));
     }
     //최댓값 만들기 (1)
     public static int solution(int[] numbers) {
