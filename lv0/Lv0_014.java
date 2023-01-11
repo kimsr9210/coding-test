@@ -1,12 +1,10 @@
 package lv0;
 
-import java.util.Arrays;
-
-class Lv0_013 {
+class Lv0_014 {
     public static void  main(String[] args) {
 		String my_string = "love";
 		int n = 5 ;
-        System.out.println(solution(my_string, n)));
+        System.out.println(solution(my_string, n));
     }
     //문자 반복 출력하기
     public static String solution(String my_string, int n) {
