@@ -1,11 +1,9 @@
 class Solution {
     public int solution(String my_string) {
         int answer = 0;
-        String arr[] = my_string.split("[^0-9]+");
-        for(String arr2 : arr) {
-        	if(arr2.matches("[0-9]+")) {
-        		answer += Integer.parseInt(arr2);
-        	}
+        String[] str = my_string.replaceAll("[^0-9]", " ").split(" ");
+        for(String s : str){
+            if(!s.equals("")) answer += Integer.valueOf(s); //wrapper Object인 Integer를 반환
         }
         return answer;
     }
