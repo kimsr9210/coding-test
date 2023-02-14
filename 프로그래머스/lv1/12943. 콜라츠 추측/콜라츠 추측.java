@@ -1,6 +1,6 @@
 class Solution {
     public int solution(int num) {
-    	long n = num;
+    	long n = num; //계산중 int의 자료형의 범위를 초과하는것도 고려해야 함 
     	int cnt = 0;
         int answer = 0;
         
