@@ -8,6 +8,11 @@ class Solution {
         for(int i = 0; i < c.length; i++) {
         	answer += c[i];
         }
+        
+        //**다른 풀이 방법**
+        //정규식 전방탐색
+        //answer = phone_number.replaceAll(".(?=.{4})", "*");
+        
         return answer;
     }
 }
