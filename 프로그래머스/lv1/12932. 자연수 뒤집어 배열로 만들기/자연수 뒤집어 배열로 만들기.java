@@ -8,7 +8,6 @@ class Solution {
         StringBuffer sb = new StringBuffer(typeChange);
         typeChange = sb.reverse().toString(); //거꾸로 
         
-
         int[] answer = new int[typeChange.length()];
         String[] str = new String[typeChange.length()];
         str = typeChange.split("");
