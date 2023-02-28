@@ -7,7 +7,14 @@ class Solution {
         int[] student1 = {1, 2, 3, 4, 5}; //5
         int[] student2 = {2,1,2,3,2,4,2,5}; //8
         int[] student3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5}; //10
-        //1,2,3,4,5
+        
+        System.out.println(0 % 5); //-> index : 0
+        System.out.println(1 % 5); //-> index : 1
+        System.out.println(2 % 5); //-> index : 2
+        System.out.println(3 % 5); //-> index : 3
+        System.out.println(4 % 5); //-> index : 4
+        System.out.println(5 % 5); //-> index : 5
+        System.out.println(6 % 5); //-> index : 6
         for(int i = 0 ; i < answers.length; i++) {
         	if(answers[i] == student1[i % 5]) {
         		cnt1++;
