@@ -4,9 +4,9 @@ class Solution {
         int cnt1 = 0;
         int cnt2 = 0;
         int cnt3 = 0;
-        int[] student1 = {1, 2, 3, 4, 5}; //5
-        int[] student2 = {2,1,2,3,2,4,2,5}; //8
-        int[] student3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5}; //10
+        int[] student1 = {1, 2, 3, 4, 5}; //5개
+        int[] student2 = {2,1,2,3,2,4,2,5}; //8개
+        int[] student3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5}; //10개
         
         System.out.println(0 % 5); //-> index : 0
         System.out.println(1 % 5); //-> index : 1
