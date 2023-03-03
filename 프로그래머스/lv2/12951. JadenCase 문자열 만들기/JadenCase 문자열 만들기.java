@@ -1,8 +1,9 @@
 class Solution {
     public String solution(String s) {
         String answer = "";
-        String empty = "";
-        empty = s.substring(s.length()-1,s.length());
+        
+        //마지막 글자가 공백인지 확인 하기 위해 만든 변수
+        String empty = s.substring(s.length()-1,s.length());
         String[] str = s.split(" ");
         
         for(int i = 0; i < str.length; i ++) {
