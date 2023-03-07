@@ -14,7 +14,7 @@ class Solution {
 
         HashSet<Integer> hashSet = new HashSet<>(arrayList); //중복제거
 
-        answer[0] = 12 - hashSet.size(); //4개
+        answer[0] = 12 - hashSet.size();
         answer[1] = (12 - hashSet.size()) - zero;
 
         for(int i = 0; i < answer.length; i++) {
