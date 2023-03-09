@@ -1,7 +1,7 @@
 import java.util.Stack;
 class Solution {
     public int solution(int[][] board, int[] moves) {
-                int answer = 0; //인형을 제거하는 횟수
+         int answer = 0; //인형을 제거하는 횟수
         
         //Stack() 자료구조
         //한 쪽 끝에서만 자료를 넣고 뺄 수 있는 LIFO(Last In First Out) 형식의 자료 구조
