@@ -3,8 +3,8 @@ class Solution {
         int answer = 0;
         int cupon = 0;
     	while(true) {
-            cupon = chicken / 10 ; //108
-        	chicken = chicken % 10 + cupon ; //108
+            cupon = chicken / 10 ;
+        	chicken = (chicken % 10) + cupon ;
         	answer += cupon ;
         	if(chicken < 10) break;
     	}
