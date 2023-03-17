@@ -3,14 +3,11 @@ import java.util.Arrays;
 class Solution {
     public String solution(String s) {
         String answer = "";
-        String[] str = s.split(" "); //공백을 기준으로 자르기
-        int[] arr = new int[str.length];
-        for(int i = 0; i < str.length; i++) {
-        	arr[i] = Integer.parseInt(str[i]);
-        }
-        Arrays.sort(arr);
-        answer += arr[0]+" ";
-        answer += arr[arr.length-1];
+		int[] str = {};
+		str = Arrays.stream(s.split(" ")).mapToInt(Integer::parseInt).toArray();
+        Arrays.sort(str);
+		int min = Math.min(str[0], str[str.length - 1]), max = Math.max(str[0], str[str.length - 1]);
+		answer = min + " " + max;
         return answer;
     }
 }
