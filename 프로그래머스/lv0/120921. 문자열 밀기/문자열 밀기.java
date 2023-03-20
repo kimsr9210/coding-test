@@ -2,9 +2,8 @@ class Solution {
     public int solution(String A, String B) {
         int answer = -1;
         String cut = "";
-                if(A.equals(B)) {
+        if(A.equals(B)) {
         	answer = 0 ; 
-        	System.out.println(answer);
         	return answer;
         }else {
             for(int i = 0 ; i < A.length(); i++) {
