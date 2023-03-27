@@ -1,26 +1,49 @@
 import java.util.HashMap;
+import java.util.Map;
 class Solution {
     public int[] solution(int n, String[] words) {
-        int[] answer = {0,0};
-        
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
-        
-        for(int i = 0; i < words.length; i++) {
-        	if( i != 0) {
-        		String s1 = words[i -1]; //이전단어
-        		String s2 = words[i]; //현재단어
-        		
-            	char last = s1.charAt(s1.length()-1); //이전단어 마지막 글자
-            	char first = s2.charAt(0); //지금단어 첫번째 글자
-            	
-            	if(map.containsKey(s2) || last != first) { //단어가 중복이거나 철자가 이어지지 않는 경우
-            		answer[0] = (i % n) + 1 ; //탈락하는 사람의 번호
-            		answer[1] = (i / n) + 1; //몇 번째 차례
-                    return answer;
-            	}
-        	}
-        	map.put(words[i], 1);
+     	int[] answer = {};
+        int cnt = 0;
+		Map<String, Integer> map = new HashMap<>();
+		
+        answer = new int [2];
+        int i = 0;
+        for(; i < words.length;i++) {
+            if(i == 0) {
+                map.put(words[i], 1);
+                cnt++;
+            } else {
+                if(words[i-1].charAt(words[i-1].length()-1) != words[i].charAt(0) || map.containsKey(words[i])) {
+                    if(cnt >= n) {
+                        cnt = cnt - n + 1;
+                    } else {
+                        cnt++;
+                    }
+                    
+                    i++;
+                    
+                    answer[0] = cnt;
+                    
+                    if (i % n == 0) {
+                        answer[1] = i / n;
+                    } else {
+                        answer[1] = i / n + 1;
+                    }
+                    
+                    break;
+                } else {
+                    if(cnt >= n) {
+                        cnt = cnt - n + 1;
+                    } else {
+                        cnt++;
+                    }
+                    map.put(words[i], 1);
+                }
+            }
         }
+        
+        System.out.println(answer[0]);
+        System.out.println(answer[1]);
         return answer;
     }
 }
