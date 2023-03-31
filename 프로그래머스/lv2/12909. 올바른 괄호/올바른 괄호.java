@@ -10,7 +10,7 @@ class Solution {
         	}else if(open == -1) {
         		answer = false;
         		break;
-        	}else if(str[i] == '(') {  //열은 만큼 닫아야함
+        	}else if(str[i] == '(') {  //괄호를 열은 만큼 닫아야함
         		open++;
         	}else {
         		open--;
