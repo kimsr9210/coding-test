@@ -5,11 +5,11 @@ public class Main{
 		int A, B;
 		A = sc.nextInt();
 		B = sc.nextInt();
-        
-        String result = "";
-        if(A > B) result = ">";
-        if(A < B) result = "<";
-        if(A == B) result = "==";
+
+		String result = "";
+		if(A > B) result = ">";
+		if(A < B) result = "<";
+		if(A == B) result = "==";
 		System.out.println(result);
 	}
 }
