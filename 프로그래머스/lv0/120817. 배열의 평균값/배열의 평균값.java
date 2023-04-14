@@ -1,13 +1,12 @@
 class Solution {
     public double solution(int[] numbers) {
         double answer = 0;
-        int sum = 0;
         
-        for(int arr : numbers) {
-        	sum += arr;
+        for(int n : numbers){
+            answer += n ;
         }
+        answer = answer / numbers.length;
         
-        answer = (double)sum / numbers.length; //double로 형변환
         return answer;
     }
 }
