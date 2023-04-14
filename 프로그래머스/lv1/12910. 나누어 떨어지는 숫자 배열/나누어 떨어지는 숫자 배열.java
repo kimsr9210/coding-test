@@ -1,19 +1,22 @@
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 class Solution {
     public int[] solution(int[] arr, int divisor) {
-        int[] answer = {};
-        ArrayList<Integer> list = new ArrayList<>();
-        for(int i = 0; i < arr.length; i++) {
-        	if(arr[i] % divisor == 0) list.add(arr[i]);
+        //arr에서 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 값을 반환
+        
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for(int a : arr){
+            if(a % divisor == 0) arrayList.add(a);
         }
-        Collections.sort(list); //컬렉션 정렬
         
-        if(list.size() == 0) list.add(-1);
+        Collections.sort(arrayList);
         
-        //Java 8 이상일 경우 stream API를 사용
-        //Integer list를 배열(array)로 변환
-        answer = list.stream().mapToInt(i -> i).toArray(); 
-        return answer;
+        if(arrayList.size() == 0){
+            int[] answer = {-1};
+            return answer;
+        }else{
+            int[] answer = new int [arrayList.size()];
+            answer = arrayList.stream().mapToInt(i -> i).toArray();
+            return answer;
+        }
     }
 }
