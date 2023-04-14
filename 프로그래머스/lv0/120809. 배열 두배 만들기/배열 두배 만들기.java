@@ -1,10 +1,11 @@
 class Solution {
     public int[] solution(int[] numbers) {
-        int[] answer = new int [numbers.length]; 
-        for(int i = 0; i<numbers.length;i++) {
-        	answer[i] = numbers[i]*2;
-            System.out.println(answer[i]);
+        int[] answer = new int [numbers.length];
+        int idex = 0;
+        for(int n : numbers){
+            answer[idex] = n * 2;
+            idex++;
         }
-		return answer;
+        return answer;
     }
 }
