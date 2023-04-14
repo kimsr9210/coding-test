@@ -1,9 +1,10 @@
 class Solution {
     public int[] solution(String[] strlist) {
-        int[] answer = new int [strlist.length]; //길이만큼 생성
-        int cnt = strlist.length;
-        for(int i = 0; i < cnt; i++) {
-        	answer[i] = strlist[i].length();
+        int[] answer = new int [strlist.length];
+        int idex = 0;
+        for(String s : strlist){
+            answer[idex] = s.length();
+            idex++;
         }
         return answer;
     }
