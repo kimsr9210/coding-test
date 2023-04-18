@@ -3,7 +3,6 @@ import java.util.Arrays;
 import java.util.ArrayList;
 class Solution {
     public int[] solution(int[] array, int[][] commands) {
-        //커밋 왜안되는거지 ??? 
         int[] answer = new int [commands.length];
         int answerIndex = 0;
 
