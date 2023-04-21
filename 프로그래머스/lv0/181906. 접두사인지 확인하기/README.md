@@ -1,4 +1,4 @@
-# [unrated] 접두사인지 확인하기 - 181906 
+# [level 0] 접두사인지 확인하기 - 181906 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181906) 
 

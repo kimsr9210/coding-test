@@ -1,4 +1,4 @@
-# [unrated] n 번째 원소까지 - 181889 
+# [level 0] n 번째 원소까지 - 181889 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181889) 
 

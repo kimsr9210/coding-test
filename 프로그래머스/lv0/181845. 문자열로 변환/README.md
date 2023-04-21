@@ -1,10 +1,10 @@
-# [unrated] 정수 부분 - 181850 
+# [level 0] 문자열로 변환 - 181845 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181850) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181845) 
 
 ### 성능 요약
 
-메모리: 78.1 MB, 시간: 0.02 ms
+메모리: 76.1 MB, 시간: 0.04 ms
 
 ### 구분
 
@@ -16,14 +16,14 @@ Empty
 
 ### 문제 설명
 
-<p>실수 <code>flo</code>가 매개 변수로 주어질 때, <code>flo</code>의 정수 부분을 return하도록 solution 함수를 완성해주세요.</p>
+<p>정수 <code>n</code>이 주어질 때, <code>n</code>을 문자열로 변환하여 return하도록 solution 함수를 완성해주세요.</p>
 
 <hr>
 
 <h5>제한사항</h5>
 
 <ul>
-<li>0 ≤ <code>flo</code> ≤ 100</li>
+<li>1 ≤ <code>n</code> ≤ 10000</li>
 </ul>
 
 <hr>
@@ -31,17 +31,17 @@ Empty
 <h5>입출력 예</h5>
 <table class="table">
         <thead><tr>
-<th>flo</th>
+<th>n</th>
 <th>result</th>
 </tr>
 </thead>
         <tbody><tr>
-<td>1.42</td>
-<td>1</td>
+<td>123</td>
+<td>"123"</td>
 </tr>
 <tr>
-<td>69.32</td>
-<td>69</td>
+<td>2573</td>
+<td>"2573"</td>
 </tr>
 </tbody>
       </table>
@@ -52,13 +52,13 @@ Empty
 <p>입출력 예 #1</p>
 
 <ul>
-<li>1.42의 정수 부분은 1입니다.</li>
+<li>123을 문자열로 변환한 "123"을 return합니다.</li>
 </ul>
 
 <p>입출력 예 #2</p>
 
 <ul>
-<li>69.32의 정수 부분은 69입니다.</li>
+<li>2573을 문자열로 변환한 "2573"을 return합니다.</li>
 </ul>
 
 
