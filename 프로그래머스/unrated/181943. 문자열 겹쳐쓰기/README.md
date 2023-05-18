@@ -1,4 +1,4 @@
-# [unrated] 문자열 겹쳐쓰기 - 181943 
+# [level 0] 문자열 겹쳐쓰기 - 181943 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181943) 
 

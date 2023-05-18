@@ -1,4 +1,4 @@
-# [unrated] 홀짝에 따라 다른 값 반환하기 - 181935 
+# [level 0] 홀짝에 따라 다른 값 반환하기 - 181935 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181935) 
 

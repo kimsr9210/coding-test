@@ -1,4 +1,4 @@
-# [unrated] 마지막 두 원소 - 181927 
+# [level 0] 마지막 두 원소 - 181927 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181927) 
 
