@@ -4,8 +4,8 @@ class Solution {
         String num1 = ""; //홀수
         String num2 = ""; //짝수
         for(int n : num_list){
-            if(n % 2 == 1) num1 += n; //홀수
-            if(n % 2 == 0) num2 += n; //짝수
+            if(n % 2 == 1) num1 += n;
+            if(n % 2 == 0) num2 += n;
         }
         answer = Integer.parseInt(num1) + Integer.parseInt(num2);
         return answer;
