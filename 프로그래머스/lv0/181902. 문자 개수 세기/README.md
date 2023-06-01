@@ -1,4 +1,4 @@
-# [unrated] 문자 개수 세기 - 181902 
+# [level 0] 문자 개수 세기 - 181902 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181902) 
 

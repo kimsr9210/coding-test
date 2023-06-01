@@ -1,4 +1,4 @@
-# [unrated] 꼬리 문자열 - 181841 
+# [level 0] 꼬리 문자열 - 181841 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181841) 
 

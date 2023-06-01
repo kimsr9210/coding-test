@@ -1,4 +1,4 @@
-# [unrated] 배열의 길이에 따라 다른 연산하기 - 181854 
+# [level 0] 배열의 길이에 따라 다른 연산하기 - 181854 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181854) 
 
