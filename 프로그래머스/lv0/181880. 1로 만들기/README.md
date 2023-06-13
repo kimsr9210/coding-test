@@ -1,4 +1,4 @@
-# [unrated] 1로 만들기 - 181880 
+# [level 0] 1로 만들기 - 181880 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181880) 
 
