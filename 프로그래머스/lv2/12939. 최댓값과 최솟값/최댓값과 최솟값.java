@@ -1,13 +1,14 @@
-
-import java.util.Arrays;
 class Solution {
     public String solution(String s) {
         String answer = "";
-		int[] str = {};
-		str = Arrays.stream(s.split(" ")).mapToInt(Integer::parseInt).toArray();
-        Arrays.sort(str);
-		int min = Math.min(str[0], str[str.length - 1]), max = Math.max(str[0], str[str.length - 1]);
-		answer = min + " " + max;
+        String[] str = s.split(" ");
+        int min = Integer.parseInt(str[0]);
+        int max = Integer.parseInt(str[0]);
+        for(int i = 0; i < str.length; i++){
+            min = Math.min(Integer.parseInt(str[i]), min);
+            max = Math.max(Integer.parseInt(str[i]), max);
+        }
+        answer = String.valueOf(min) + " " + String.valueOf(max);
         return answer;
     }
 }
