@@ -1,6 +1,6 @@
 class Solution {
     public int solution(int n) {
-        int[] answer = new int [n+1];
+        int[] answer = new int [n+1]; //4
         answer[0] = 0;
         answer[1] = 1;
         for(int i = 2; i <= n; i++) {
