@@ -1,26 +1,32 @@
-import java.util.HashMap;
+import java.util.*;
 class Solution {
     public int[] solution(int n, String[] words) {
-        int[] answer = {0,0};
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        int[] answer = {0,0}; 
+        HashSet<String> hashSet = new HashSet<>();
+        hashSet.add(words[0]);
         
-        for(int i = 0; i < words.length; i++) {
-        	if( i != 0) {
-        		String s1 = words[i -1]; //이전단어
-        		String s2 = words[i]; //현재단어
-        		
-            	char last = s1.charAt(s1.length()-1); //이전단어 마지막 글자
-            	char first = s2.charAt(0); //지금단어 첫번째 글자
-            	
-            	if(map.containsKey(s2) || last != first) { //단어가 중복이거나 철자가 이어지지 않는 경우
-            		answer[0] = (i % n) + 1 ; //탈락하는 사람의 번호
-            		answer[1] = (i / n) + 1; //몇 번째 차례
-            		
-            		return answer;
-            	}
+        String before = words[0].substring(words[0].length()-1, words[0].length());
+        
+        for(int i = 1; i < words.length; i++) {
+        	if(!hashSet.contains(words[i])) {
+        		hashSet.add(words[i]);
+        	}else if(hashSet.contains(words[i]) || words[i].length() < 2){
+        		answer[0] = (i % n) + 1;//사람 번호
+        	    answer[1] = (i / n) + 1; //차례
+        	    return answer;
         	}
-        	map.put(words[i], 1);
+    
+        	String now = words[i].substring(0, 1);
+        	if(!before.equals(now)) {
+        		answer[0] = (i % n) + 1;//사람 번호
+        	    answer[1] = (i / n) + 1; //차례
+                return answer;
+        	}
+            
+        	before = words[i].substring(words[i].length()-1, words[i].length());
+            
         }
+        
         return answer;
     }
 }
