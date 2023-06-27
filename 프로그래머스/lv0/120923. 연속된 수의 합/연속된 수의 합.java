@@ -9,7 +9,7 @@ class Solution {
         	for(int i = 0; i < num; i++) {
         		number += start + i; // 1 2 3 //2 3 4 //3 4 5
         	}
-        	if(number == total) { //12
+        	if(number == total) {
         		break;
         	}
         	
