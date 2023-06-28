@@ -13,6 +13,21 @@ numbers의 원소는 0 이상 1,000 이하입니다.
 정답이 너무 클 수 있으니 문자열로 바꾸어 return 합니다.
 
 <h5>입출력 예</h5>
-numbers	return
-[6, 10, 2]	"6210"
-[3, 30, 34, 5, 9]	"9534330"
+<table class="table">
+<thead>
+    <tr>
+        <th>numbers</th>
+        <th>result</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>[6, 10, 2]</td>
+        <td>"6210"</td>
+    </tr>
+    <tr>
+        <td>[3, 30, 34, 5, 9]</td>
+        <td>"9534330"</td>
+    </tr>
+</tbody>
+</table>
