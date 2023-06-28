@@ -2,13 +2,13 @@ package codingTestSkills;
 
 import java.util.Arrays;
 
-public class Step1_3 {
+public class Step1_2 {
 
 	public static void main(String[] args) {
-		Step1_3 step1_3 = new Step1_3(); 
+		Step1_2 step1_2 = new Step1_3(); 
 
 		int[] numbers = {3, 30, 34, 5, 9};
-		step1_3.solution(numbers);
+		step1_2.solution(numbers);
 		
 	}
 
