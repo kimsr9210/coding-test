@@ -22,6 +22,7 @@
 <hr>
 
 <h5>입출력 예</h5>
+<table>
 <thead>
     <tr>
         <th>budgets</th>
