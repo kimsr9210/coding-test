@@ -15,15 +15,13 @@ public class Step3_2 {
     
     public int elevator (int floor) {
     	
-    	if(floor <= 1) { //c1 끝, c2
-    		return floor; 
-    	}
-    	
+    	if(floor <= 1) return floor; 
+	    
     	int under10 = floor % 10; //나머지 6 , 2 
     	int rest = floor / 10; //몫 1
     	
-    	int c1 = under10 + elevator(rest); //6 + 1
-    	int c2 = (10 - under10) + elevator(rest + 1); //10 - 6 = 4; , 2
-    	return Math.min(c1,c2);
+    	int sum1 = under10 + elevator(rest); //6 + 1
+    	int sum2 = (10 - under10) + elevator(rest + 1); //10 - 6 = 4; , 2
+    	return Math.min(sum1, sum2);
     }
 }
