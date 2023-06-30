@@ -3,7 +3,7 @@ package codingTestSkills;
 import java.util.Arrays;
 
 public class Step4_2 {
-	//동전 뒤집기
+	//동전 뒤집기(코딩중)
 	public static void main(String[] args) {
 		Step4_2 step4_2 = new Step4_2(); 
 
