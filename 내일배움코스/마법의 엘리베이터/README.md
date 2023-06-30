@@ -13,10 +13,6 @@
 1 ≤ storey ≤ 100,000,000
 
 <h5>입출력 예</h5>
-storey	result
-16	6
-2554	16
-
 <table class="table">
 <thead>
     <tr>
