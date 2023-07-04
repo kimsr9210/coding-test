@@ -12,6 +12,9 @@ public class Step2_2 {
 		
 	}
 
+    public int solution(int[] people, int[] tshirts) {
+        int answer = 0;
+        return answer;
+    }
 
-    
 }
