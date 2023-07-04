@@ -14,26 +14,19 @@ public class Step2_2 {
 	}
 
     public int solution(int[] people, int[] tshirts) {
+        Arrays.sort(people);
+        Arrays.sort(tshirts);
+
         int answer = 0;
-        
-        HashMap<Integer, Integer> hashMap = new HashMap<>();
-        
-        for(int i = 0; i < tshirts.length; i++) {
-        	int value = 1;
-        	if(hashMap.containsKey(tshirts[i])) value = hashMap.get(tshirts[i]) + 1;
-        	hashMap.put(tshirts[i], value);
+
+        int i = tshirts.length - 1;
+        for (int j = people.length - 1; j >= 0 && i >= 0; j--) {
+            if (tshirts[i] >= people[j]) {
+                answer += 1;
+                i -= 1;
+            }
         }
-        System.out.println(hashMap);
-        for(int i = 0; i < people.length; i++) {
-        	//티셔츠의 사이즈가 있으면서, 재고가 0이 아닐때
-        	if(hashMap.containsKey(people[i]) && hashMap.get(people[i]) > 0) { 
-        		hashMap.put(people[i], hashMap.get(people[i])-1);
-        		answer++;
-        	}
-        }
-        System.out.println(hashMap);
-        System.out.println(answer);
+
         return answer;
     }
-
 }
