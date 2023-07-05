@@ -4,8 +4,7 @@ class Solution {
         //레떼 5000
         int answer = 0;
         for(String o : order){
-            if(o.contains("latte")) answer += 5000;
-            else answer += 4500;
+            answer += o.contains("latte") ? 5000 : 4500;
         }
         return answer;
     }
