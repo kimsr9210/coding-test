@@ -1,4 +1,4 @@
-# [unrated] 9로 나눈 나머지 - 181914 
+# [level 0] 9로 나눈 나머지 - 181914 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181914) 
 
