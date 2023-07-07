@@ -1,40 +1,38 @@
 package codingTestSkills;
 
-import java.util.stream.IntStream;
+import java.util.HashMap;
 
 public class Step1_3 {
 	//예산
 	public static void main(String[] args) {
-		Step1_3 step1_3 = new Step1_3(); 
+		Step3_1 step3_2 = new Step3_1(); 
 
-		int[] budgets = {120, 110, 140, 150};
-		int M = 485;
-		step1_3.solution(budgets, M);
-		
+		int[] bell = {1, 2, 1, 1, 1, 2, 2, 1};
+		step3_2.solution(bell);
 	}
 	
-	public int solution(int[] budgets, int M) {
-		//최소값, 최대값 ,중간값 구하기
-		int answer = 0;
-		int min = 0; //최소값
-		int max = IntStream.of(budgets).max().orElse(0); // //높은 값이 없다면 0을 반환
-		
-		while(min <= max) {
-			int mid = (min + max) / 2; //중간값
-			
-			int sum = 0;
-			for(int b : budgets) {
-				if(b > mid) sum += mid;
-				else sum += b;
-			}
-			
-			if(sum <= M) {
-				min = mid + 1;
-				answer = mid;
-			}else {
-				max = mid - 1;
-			}
-		}
-		return answer ;
+    public int solution(int[] bell) {
+        int answer = 0;
+        
+        for(int i = 0; i < bell.length; i++) {
+        	if(bell[i] == 2) bell[i] = -1;
+        }
+        
+        int total = bell[0];
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        hashMap.put(0, -1);
+        hashMap.put(total, 0);
+        
+        for(int i = 1; i < bell.length; i++) {
+        	total += bell[i];
+        	if(!hashMap.containsKey(total)) {
+        		hashMap.put(total,i);
+        	}else {
+        		answer = Math.max(answer, i - hashMap.get(total));
+        	} 
+        	
+        }
+        
+        return answer;
 	}
 }
