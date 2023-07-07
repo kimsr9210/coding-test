@@ -2,13 +2,13 @@ package codingTestSkills;
 
 import java.util.HashMap;
 
-public class Step1_3 {
+public class Step3_1 {
 	//예산
 	public static void main(String[] args) {
-		Step3_1 step3_2 = new Step3_1(); 
+		Step3_1 Step3_1 = new Step3_1(); 
 
 		int[] bell = {1, 2, 1, 1, 1, 2, 2, 1};
-		step3_2.solution(bell);
+		Step3_1.solution(bell);
 	}
 	
     public int solution(int[] bell) {
