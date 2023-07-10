@@ -21,7 +21,7 @@ public class Step3_2 {
     	int rest = floor / 10; //몫 1
     	
     	int sum1 = under10 + elevator(rest); //6 + 1
-    	int sum2 = (10 - under10) + elevator(rest + 1); //10 - 6 = 4; , 2
+    	int sum2 = (10 - under10) + elevator(rest + 1); //10 - 6 = 4;  , 2
     	return Math.min(sum1, sum2);
     }
 }
