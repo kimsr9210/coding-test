@@ -1,46 +1,66 @@
 package codingTestSkills;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 //게임 맵 최단거리
-public class Step3_3 {
+public class Step3_3_1 {
 	public static void main(String[] args) {
-		Step3_3 step3_3 = new Step3_3(); 
+		Step3_3_1 step3_3 = new Step3_3_1(); 
 
 		int[][] maps = {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}};
 		//int[][] maps = {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,0},{0,0,0,0,1}};
 		step3_3.solution(maps);
 		
 	}
-
-	//우선순위 : 아래, 오른쪽, 위
-    public int solution(int[][] maps) {
-        int answer = 0;
+	
+	class Position {
+		int x, y;
+		
+		Position(int x, int y){
+			this.x = x;
+			this.y = y;
+		}
+		
+		boolean isValid(int width, int height) {
+			if(x < 0 || x >= width) return false;
+			if(y < 0 || y >= height) return false;
+			return true;
+		}
+	}
+    public int solution(int[][] maps) {   
+        int mapHeight = maps.length;
+        int mapWidth = maps[0].length;
         
-        if(maps[4][3] == 0 && maps[3][4] == 0) return -1;
- 
-        for(int i = 0; i < maps.length; i++) {
-        	System.out.println("");
-        	for(int j = 0; j < maps[i].length; j++) {
-        		System.out.print(maps[i][j]);
-        		if(maps[i][j] == 1) {
-        			maps[i][j] = 0; //answer++ 방지하기 위해 1 => 0으로 바꾼다. 
-        			answer++;
-        		}else {
-        			if(j > 2) {
-        				i--; //위로 올라간다
-        				j--;
-        				if(maps[i][j] == 1) {
-        					maps[i][j] = 0;
-        					answer++;
-        				}
-        			}
-        			break;
-        		}
+        Queue<Position> queue = new LinkedList<>();
+        int[][] count = new int[mapHeight][mapWidth];
+        boolean[][] visited = new boolean[mapHeight][mapWidth];
+        
+        queue.offer(new Position(0,0)); //.offer() 큐의 마지막에 요소를 추가
+        System.out.println(queue);
+        count[0][0] = 1;
+        visited[0][0] = true;
+        
+        while(!queue.isEmpty()) {
+        	Position current = queue.poll();
+        	
+        	int currentCount = count[current.y][current.x];
+        	
+        	final int[][] moving = {{0, -1},{0, 1},{-1, 0},{1, 0}};
+        	for(int i = 0; i < moving.length; i++) {
+        		Position moved = new Position(current.x + moving[i][0], current.y + moving[i][1]);
+        		if(!moved.isValid(mapWidth, mapHeight)) continue;
+        		if(visited[moved.y][moved.x]) continue;
+        		if(maps[moved.y][moved.x] == 0) continue; // 0 : 벽 , 1 : 길
+        		
+        		count[moved.y][moved.x] = currentCount + 1;
+        		visited[moved.y][moved.x] = true;
+        		queue.offer(moved);
         	}
         }
-        System.out.println("");
-        System.out.println("answer : " + answer);
        
-        
+        int answer = count[mapHeight-1][mapWidth-1];
+        if(answer == 0) return -1;
         return answer;
     }
 }
