@@ -32,7 +32,7 @@ public class Step3_2 {
             		if(value >= k) {
             			receive.put(contact[i][1],receive.getOrDefault(contact[i][1], 0)+1);
             		}
-            	}
+            	    }
         	}
         }
         answer = (n - c) - receive.size();
