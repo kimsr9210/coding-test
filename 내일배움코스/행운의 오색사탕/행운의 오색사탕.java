@@ -1,6 +1,6 @@
 package codingTestSkills;
 
-//행운의 오색사탕
+//행운의 오색사탕(진행중)
 public class Step3_5 {
 	public static void main(String[] args) {
 		Step3_5 step3_5 = new Step3_5(); 
@@ -12,7 +12,7 @@ public class Step3_5 {
 		//int[] positions = {3, 6, 9}; //	[1, 1, 2]
 		step3_5.solution(candy, positions);
 		
-	}
+    }
 	
     public int[] solution(String candy, int[] positions) {
         int[] answer = new int [positions.length];
