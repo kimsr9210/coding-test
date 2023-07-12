@@ -1,4 +1,4 @@
-# [unrated] 조건 문자열 - 181934 
+# [level 0] 조건 문자열 - 181934 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181934) 
 
