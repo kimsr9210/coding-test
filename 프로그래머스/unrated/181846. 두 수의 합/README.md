@@ -1,4 +1,4 @@
-# [unrated] 두 수의 합 - 181846 
+# [level 0] 두 수의 합 - 181846 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181846) 
 
