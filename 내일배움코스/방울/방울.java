@@ -30,7 +30,7 @@ public class Step3_1 {
         	}else {
         		answer = Math.max(answer, i - hashMap.get(total));
         	} 
-        	
+
         }
         
         return answer;
