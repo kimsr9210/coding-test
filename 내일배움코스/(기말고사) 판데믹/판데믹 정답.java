@@ -1,104 +1,71 @@
+
 /*
 (1)지문 이해 및 풀이 계획
-Topological Sorting (위상정렬) 방식으로 풀이합니다.
+r행과 c열을 2차원 배열에 표현하기 위해서 인덱스로 변경(-1) 해주는 것을 주의하세요
 
-최종 수강 강의(k)에 연결되는 강의로만 구성된 그래프로부터 진입차수를 계산합니다.
+연쇄적으로 주변에 증식되는 것을 BFS 방식으로 계산할 수 있습니다.
 
-DFS 방식으로 연결된 그래프만 구성합니다.
-
-문제의 조건에 따라 알파벳 순서대로 적용하기 위해 PriorityQueue를 사용합니다.
-
-그래프와 진입차수 구성을 용이하기 위해 유틸 클래스를 사용했습니다.
-
-ListMap: List를 value로 갖는 Map
-
-CountMap : Integer를 value로 갖는 Map 
+DFS로 증식을 계산해도 동일한 결과를 얻을 수 있습니다.
 *
 */
-
 import java.util.*;
 
-// String : List<String> 맵 유틸
-class ListMap {
-    private Map<String, List<String>> map = new HashMap<>();
+class Cell {
+    int row;
+    int col;
 
-    List<String> get(String key) {
-        if (!map.containsKey(key)) {
-            map.put(key, new ArrayList<>());
-        }
-        return map.get(key);
+    public Cell(int row, int col) {
+        this.row = row;
+        this.col = col;
     }
 
-    void append(String key, String value) {
-        get(key).add(value);
-    }
-}
-
-// String : Integer 맵 유틸
-class CountMap {
-    private Map<String, Integer> map = new HashMap<>();
-
-    Integer get(String key) {
-        if (!map.containsKey(key)) {
-            map.put(key, 0);
-        }
-        return map.get(key);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cell cell = (Cell) o;
+        return row == cell.row && col == cell.col;
     }
 
-    void add(String key, Integer value) {
-        map.put(key, get(key) + value);
+    @Override
+    public int hashCode() {
+        return Objects.hash(row, col);
     }
 }
 
 class Solution {
-    public String[] solution(String[] s1, String[] s2, String k) {
-        // 연결 그래프 생성
-        ListMap graph = new ListMap();
-        for (int i = 0; i < s1.length; i++) {
-            graph.get(s2[i]).add(s1[i]); // 강의 -> 선수강의
-        }
+    public int[][] solution(int rows, int columns, int max_virus, int[][] queries) {
+        int[][] answer = new int[rows][columns];
+        Queue<Cell> queue = new LinkedList<>();
 
-        Queue<String> queue = new PriorityQueue<>(); // 알파벳 순서대로 정렬되는 큐
-        ListMap graphK = new ListMap(); // K로 연결되는 강의로만 구성하는 그래프
-        CountMap indegrees = new CountMap(); // 강의:진입차수
+        for (int[] q : queries) {
+            // 방문한 곳을 확인하기 위해 Set 을 사용
+            // (Cell 이 hashCode, equals 를 재정의 하고 있기 때문에 가능)
+            Set<Cell> visited = new HashSet<>();
 
-        // DFS 방식으로 graphK 를 생성
-        Stack<String> stack = new Stack<>();
-        Set<String> visited = new HashSet<>();
-        stack.push(k);
-        visited.add(k);
+            // 세균을 증식했을 때 연쇄적으로 주변에 증식되는 것을 BFS적으로 계산
+            queue.offer(new Cell(q[0] - 1, q[1] - 1)); // 인덱스로 만들기 위해 -1
+            while (!queue.isEmpty()) {
+                Cell current = queue.poll();
 
-        while (!stack.isEmpty()) {
-            String node = stack.pop();
+                // 영역 밖이면 무시
+                if (current.row < 0 || current.row >= rows || current.col < 0 || current.col >= columns) continue;
+                // 이미 방문한 곳이면 무시
+                if (visited.contains(current)) continue;
 
-            if (graph.get(node).isEmpty()) {
-                // 진입차수가 없는 강의를 먼저 큐에 삽입
-                queue.offer(node);
-                continue;
-            }
-
-            for (String prev : graph.get(node)) {
-                indegrees.add(node, 1); // 진입차수 증가
-                graphK.append(prev, node);
-                if (visited.contains(prev)) continue;
-                stack.push(prev);
-                visited.add(prev);
-            }
-        }
-
-        List<String> answer = new ArrayList<>();
-        while (!queue.isEmpty()) {
-            String node = queue.poll();
-            answer.add(node);
-            for (String next : graphK.get(node)) {
-                indegrees.add(next, -1);
-                if (indegrees.get(next) == 0) {
-                    // 감소된 진입차수가 0이면 큐에 삽입
-                    queue.offer(next);
+                visited.add(current);
+                if (answer[current.row][current.col] < max_virus) {
+                    answer[current.row][current.col] += 1;
+                    continue;
                 }
+
+                // 주변에 증식
+                queue.offer(new Cell(current.row, current.col + 1));
+                queue.offer(new Cell(current.row, current.col - 1));
+                queue.offer(new Cell(current.row + 1, current.col));
+                queue.offer(new Cell(current.row - 1, current.col));
             }
         }
-
-        return answer.toArray(String[]::new);
+        return answer;
     }
 }
