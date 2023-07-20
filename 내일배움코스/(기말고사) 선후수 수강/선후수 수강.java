@@ -2,7 +2,7 @@ package codingTestSkills;
 
 import java.util.Stack;
 
-//선후수 수강
+//선후수 수강 (코딩중)
 public class Step4_2 {
 	public static void main(String[] args) {
 		Step4_2 step4_2 = new Step4_2(); 
