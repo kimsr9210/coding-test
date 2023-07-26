@@ -19,8 +19,8 @@ class Solution {
 
         if(hashMap1.size() == 0 && hashMap2.size() == 0) return 65536;
 
-        int same = 0; //교집합 inter
-        int notSame = 0; //합집합 union
+        int same = 0; //교집합
+        int notSame = 0; //합집합
         for(String k : hashMap1.keySet()){
             if(hashMap2.containsKey(k)){
                 same += Math.min(hashMap1.get(k), hashMap2.get(k));
