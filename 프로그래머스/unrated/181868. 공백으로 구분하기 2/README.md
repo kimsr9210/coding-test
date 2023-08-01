@@ -1,4 +1,4 @@
-# [unrated] 공백으로 구분하기 2 - 181868 
+# [level 0] 공백으로 구분하기 2 - 181868 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181868) 
 
