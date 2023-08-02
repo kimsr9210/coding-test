@@ -1,4 +1,4 @@
-# [unrated] 특별한 이차원 배열 2 - 181831 
+# [level 0] 특별한 이차원 배열 2 - 181831 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181831) 
 
