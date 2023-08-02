@@ -1,4 +1,4 @@
-# [unrated] 등차수열의 특정한 항만 더하기 - 181931 
+# [level 0] 등차수열의 특정한 항만 더하기 - 181931 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181931) 
 
