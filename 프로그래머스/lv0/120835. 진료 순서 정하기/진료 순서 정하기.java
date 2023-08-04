@@ -25,7 +25,7 @@ class Solution {
         return answer;
         
                 
-        /* 다른풀이
+        /* 다른풀이*
         Map<Integer, Integer> map = new HashMap<>();
         int[] emergencySort = Arrays.copyOfRange(emergency, 0, emergency.length);
         Arrays.sort(emergencySort);
