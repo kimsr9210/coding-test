@@ -5,17 +5,12 @@ class Solution {
         
         int i = 0;
         while(i < arr.length){
-            if(stack.isEmpty()){
+            if(stack.isEmpty() || arr[i] > stack.peek()){
                stack.push(arr[i]); 
                i++;
             }else{
                 int s = stack.peek(); //마지막 원소를 반환
-                if(arr[i] > s){
-                    stack.push(arr[i]);
-                    i++;
-                }else if(s >= arr[i]){
-                    stack.pop();
-                }
+                if(s >= arr[i]) stack.pop();
             }
         }
         
