@@ -1,4 +1,4 @@
-# [unrated] 수 조작하기 2 - 181925 
+# [level 0] 수 조작하기 2 - 181925 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181925) 
 
