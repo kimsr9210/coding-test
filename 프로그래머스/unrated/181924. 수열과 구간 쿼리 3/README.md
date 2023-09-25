@@ -1,4 +1,4 @@
-# [unrated] 수열과 구간 쿼리 3 - 181924 
+# [level 0] 수열과 구간 쿼리 3 - 181924 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181924) 
 
