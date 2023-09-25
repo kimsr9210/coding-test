@@ -1,9 +1,6 @@
 import java.util.*;
 class Solution {
     public int[] solution(int n) {
-
-        HashSet<Integer> set = new HashSet<>(); 
-        
         ArrayList<Integer> arrayList = new ArrayList<>();
 
         while(n != 0) {
