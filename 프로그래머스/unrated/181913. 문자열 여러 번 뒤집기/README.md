@@ -1,4 +1,4 @@
-# [unrated] 문자열 여러 번 뒤집기 - 181913 
+# [level 0] 문자열 여러 번 뒤집기 - 181913 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181913) 
 
