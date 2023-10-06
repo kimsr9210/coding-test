@@ -1,32 +1,38 @@
 class Solution {
     public int solution(String dartResult) {
         int answer = 0;
-        String [] str = dartResult.replaceAll("[*#]","").split("[SDT]"); //점수
-        String[] bonus = dartResult.substring(1,dartResult.length()).split("[012345678910]"); //보너스
-
-        int[] score = new int [str.length];
-        for(int i = 0; i < score.length; i++) score[i] = Integer.parseInt(str[i]);
-        for(int i = 0; i < score.length; i++) {
-        	String option = ""; //옵션 (*,#)
-        	if(bonus[i].length() == 2) {
-        		option = bonus[i].substring(1,2);
-        		bonus[i] = bonus[i].substring(0,1);
-        	} 
-
-        	if(bonus[i].equals("S")) score[i] = (int)Math.pow(score[i], 1);
-        	if(bonus[i].equals("D")) score[i] = (int)Math.pow(score[i], 2);
-        	if(bonus[i].equals("T")) score[i] = (int)Math.pow(score[i], 3);
-            
-        	if(option.equals("*")){
-        		score[i] = score[i] * 2;
-        		if(i != 0) score[i-1] = score[i-1] * 2;
-        	}else if(option.equals("#")){
-        		score[i] = score[i] - (score[i] * 2);
-        	}
+        int index = 0;
+        int[] scores = new int [3] ; //점수 배열 저장
+        String score = ""; //점수
+        for(int i = 0; i < dartResult.length(); i++) {
+            char c = dartResult.charAt(i);
+            switch(c) {
+                case 'S' : 
+                    scores[index++] = (int)Math.pow(Integer.parseInt(score), 1);
+                    score = "";
+                    break;
+                case 'D' : 
+                    scores[index++] = (int)Math.pow(Integer.parseInt(score), 2);
+                    score = "";
+                    break;
+                case 'T' : 
+                    scores[index++] = (int)Math.pow(Integer.parseInt(score), 3);
+                    score = "";
+                    break;
+                case '*' : 
+                    scores[index-1] = scores[index-1] * 2;
+                    if(index > 1) scores[index-2] = scores[index-2] * 2;
+                    break;
+                case '#' : 
+                    scores[index-1] = scores[index-1] - (scores[index-1] * 2);
+                    break;
+                default : 
+                    score += String.valueOf(c);
+            }
         }
-        
-        for(int i : score) answer += i;
-        
+
+        for(int s : scores) answer += s;
+
         return answer;
     }
 }
