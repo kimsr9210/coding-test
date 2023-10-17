@@ -1,4 +1,4 @@
-# [level unrated] 안전지대 - 120866 
+# [level 0] 안전지대 - 120866 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120866) 
 
