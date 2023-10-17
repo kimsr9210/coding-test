@@ -3,9 +3,9 @@ class Solution {
     public int[] solution(int[] arr, int k) {
         ArrayList<Integer> arrayList = new ArrayList<>();
 
-        for(int i = 0; i < arr.length; i++) {
+        for(int a : arr) {
         	if(arrayList.size() == k) break;
-        	if(!arrayList.contains(arr[i])) arrayList.add(arr[i]);
+        	if(!arrayList.contains(a)) arrayList.add(a);
         }
 
         if(arrayList.size() < k) {
