@@ -1,4 +1,4 @@
-# [level unrated] 무작위로 K개의 수 뽑기 - 181858 
+# [level 0] 무작위로 K개의 수 뽑기 - 181858 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181858) 
 
