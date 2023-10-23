@@ -5,7 +5,7 @@ class Solution {
             char c = s.charAt(i);
             if(i == 0 && c == ')' || open == -1) return false;
             if(c == '(') open++;
-            else if(c == ')') open--;
+            else if(c == ')') open--; //열은 만큼 닫아야함
         }
         boolean answer = (open == 0) ? true : false; 
         return answer;
