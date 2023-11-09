@@ -10,10 +10,7 @@ class Solution {
         		}
         	}
         }
-        int[] answer = new int[arrayList.size()];
-        for(int i = 0; i < arrayList.size(); i++) {
-        	answer[i] = arrayList.get(i);
-        }
+        int[] answer = arrayList.stream().mapToInt(i -> i).toArray();
         Arrays.sort(answer);
         return answer;
     }
