@@ -1,4 +1,3 @@
-import java.util.*;
 class Solution {
     public int[] solution(String[] wallpaper) {
     	int[] answer = new int [4];
