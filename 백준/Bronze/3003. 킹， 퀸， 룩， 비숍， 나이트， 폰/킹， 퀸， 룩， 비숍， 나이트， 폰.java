@@ -1,27 +1,16 @@
 import java.util.*;
 public class Main{
-	public static void main(String args[]){
-		Scanner scan = new Scanner(System.in);
+    public static void main(String srgs[]){
+        Scanner sc = new Scanner(System.in);
+		int[] arr = new int[6];
+		int[] chess = {1, 1, 2, 2, 2, 8};
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
 		
-		int king = 1;
-		int queen = 1;
-		int rook = 2;
-		int bishop = 2;
-		int knight = 2;
-		int pawn = 8;
-		
-		king = king - scan.nextInt();
-		queen = queen - scan.nextInt();
-		rook = rook - scan.nextInt();
-		bishop = bishop - scan.nextInt();
-		knight = knight - scan.nextInt();
-		pawn = pawn - scan.nextInt();
-		
-		System.out.print(king + " ");
-		System.out.print(queen + " ");
-		System.out.print(rook + " ");
-		System.out.print(bishop + " ");
-		System.out.print(knight + " ");
-		System.out.print(pawn + " ");
-	}
+		for(int i = 0 ; i < arr.length; i++) {
+			arr[i] = chess[i] - arr[i];
+			System.out.println(arr[i]);
+		}
+    }
 }
