@@ -1,4 +1,4 @@
-# [level unrated] [PCCE 기출문제] 2번 / 피타고라스의 정리 - 250132 
+# [level 0] [PCCE 기출문제] 2번 / 피타고라스의 정리 - 250132 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/250132) 
 
