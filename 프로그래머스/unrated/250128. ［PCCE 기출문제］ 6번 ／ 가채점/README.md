@@ -1,4 +1,4 @@
-# [level unrated] [PCCE 기출문제] 6번 / 가채점 - 250128 
+# [level 0] [PCCE 기출문제] 6번 / 가채점 - 250128 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/250128) 
 
