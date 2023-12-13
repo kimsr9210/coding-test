@@ -1,4 +1,4 @@
-# [level unrated] [PCCE 기출문제] 10번 / 데이터 분석 - 250121 
+# [level] [PCCE 기출문제] 10번 / 데이터 분석 - 250121 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/250121) 
 

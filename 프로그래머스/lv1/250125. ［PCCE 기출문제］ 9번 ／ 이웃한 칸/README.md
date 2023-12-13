@@ -1,4 +1,4 @@
-# [level unrated] [PCCE 기출문제] 9번 / 이웃한 칸 - 250125 
+# [level] [PCCE 기출문제] 9번 / 이웃한 칸 - 250125 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/250125) 
 
