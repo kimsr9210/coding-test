@@ -12,7 +12,7 @@ class Solution {
         		if(stamina <= 0) return -1;	
                 t = 0;
                 index0++;
-        	}else if(attacks[index0][0] != i && health >= stamina) { //공격시간이 아니면서, 체력이 깍였으면
+        	}else if(attacks[index0][0] != i && health > stamina) { //공격시간이 아니면서, 체력이 깍였으면
         		if(t <= bandage[0] && stamina < health) { //체력회복
         			stamina = stamina + bandage[1];
         			t++;
