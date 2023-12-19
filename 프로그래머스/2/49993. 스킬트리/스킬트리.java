@@ -16,8 +16,6 @@ class Solution {
             	}
             	if(same) answer++;
             }
-
-        System.out.println(answer);
         return answer;
     }
 }
