@@ -1,4 +1,4 @@
-# [level unrated] [PCCP 기출문제] 1번 / 붕대 감기 - 250137 
+# [level 1] [PCCP 기출문제] 1번 / 붕대 감기 - 250137 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/250137) 
 
