@@ -20,11 +20,11 @@ public class Step3_6 {
 	//아래에서부터 왼쪽,오른쪽 삼각형을 만들어서 더 큰수를 구한다.
 	//아래에서부터 올라가기 때문에 끝에있는 경우(숫자가 없을경우) 조건을 안 만들어도 된다.
     public int solution(int[][] triangle) {
-        for(int i = triangle.length-2; i >= 0; i--) {
-        	for(int j = 1; j < triangle[i].length; j++) {
-        		int left = triangle[i][j] + triangle[i+1][j];
-        		int right = triangle[i][j] + triangle[i+1][j+1];
-        		triangle[i][j] = Math.max(left, right);
+        for(int i = triangle.length-1; i > 0; i--) {
+        	for(int j = 0; j < triangle[i].length-1; j++) {
+        		int left = triangle[i-1][j] + triangle[i][j];
+        		int right = triangle[i-1][j] + triangle[i][j+1];
+        		triangle[i-1][j] = Math.max(left, right);
         	}
         }
         return triangle[0][0];
