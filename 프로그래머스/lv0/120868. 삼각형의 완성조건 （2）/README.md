@@ -1,4 +1,4 @@
-# [level unrated] 삼각형의 완성조건 (2) - 120868 
+# [level 0] 삼각형의 완성조건 (2) - 120868 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120868) 
 
