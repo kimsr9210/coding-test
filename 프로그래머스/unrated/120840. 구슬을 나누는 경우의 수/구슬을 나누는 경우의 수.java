@@ -1,12 +1,15 @@
 class Solution {
-    public int solution(int balls, int share) {
-        long answer = 1;
-        int sharIndex = 1;
-        for(int i = share+1; i <= balls; i++) {
-        	answer *= i;
-        	answer /= sharIndex;
-        	sharIndex++;
+    public int combinations(int n, int m){
+        if(m == 0 || n == m) {
+            return 1;
+        }else {
+            return combinations(n-1, m-1) + combinations(n-1, m);
         }
-        return (int)answer;
+    }
+
+    public int solution(int balls, int share) {
+        int answer = 0;
+        answer = combinations(balls, share);
+        return answer;
     }
 }
