@@ -2,43 +2,44 @@ import java.util.*;
 class Solution {
     public int solution(String numbers) {
         //소수 : 1과 자기자신으로만 나누어 지는 수
-    	int answer = 0;
-    	HashSet<Integer> hashSet = new HashSet<>(); //중복 불가
-    	
-    	permutation("", numbers, hashSet); 
-    	
-    	while(hashSet.iterator().hasNext()) {
-    		int a = hashSet.iterator().next();
-    		hashSet.remove(a);
-    		if(a == 2) answer++;
-    		if(a != 2 && isPrime(a)) answer++;
-    	}
+    	//길이가 1 ~ 6
+    	//소수를 몇개를 만들 수 있는지 return
+        int answer = 0;
+        HashSet<Integer> hashSet = new HashSet<>();
+        check("", numbers, hashSet);
         
+        while(hashSet.iterator().hasNext()) {
+        	int num = hashSet.iterator().next();
+        	hashSet.remove(num);
+        	if(num == 2) answer++;
+        	if(num != 2 && isPrime1(num)) answer++;
+        }
+        System.out.println(answer);
         return answer;
     }
     
-    public boolean isPrime(int n) {
-    	if(n == 0 || n == 1) return false;
-        
+    public boolean isPrime1(int num) {
+    	if(num == 0 || num == 1) return false;
+    	
+    	//소수 찾기
     	boolean prime = true;
-    	for(int i = 2; i < n; i++) {
-    		if(n % i == 0) {
+    	for(int i = 2; i < num; i++) {
+    		if(num % i == 0) {
     			prime = false;
     			break;
     		}
     	}
     	return prime;
+    	
     }
     
-    public void permutation(String prefix, String str, HashSet<Integer> hashSet) {
-    	int n = str.length();
-    	if(!prefix.equals("")) {
-    		hashSet.add(Integer.valueOf(prefix)); //String을 Integer로 변환
+    public void check(String str, String numbers, HashSet<Integer> hashSet) {
+    	int n = numbers.length();
+    	if(!str.equals("")) {
+    		hashSet.add(Integer.valueOf(str)); //String을 Integer로 변환
     	}
     	for(int i = 0; i < n; i++) {
-    		String prefixs = prefix + str.charAt(i);
-    		String strs = str.substring(0, i) + str.substring(i+1, n);
-    		permutation(prefixs, strs, hashSet);
+    		check(str + numbers.charAt(i), numbers.substring(0, i) + numbers.substring(i+1, n), hashSet);
     	}
     }
 }
