@@ -1,15 +1,20 @@
 class Solution {
     public String solution(String s, int n) {
         String answer = "";
-        for(int i = 0; i < s.length(); i++) {
-        	char c = s.charAt(i); //하나씩 쪼개서 대입한다.
-
-        	if(Character.isLowerCase(c)) { //입력받은 인자 소문자 여부 확인
-        		c = (char)((c - 'a' + n) % 26 + 'a');
-        	}else if(Character.isUpperCase(c)) {
-        		c = (char)((c - 'A' + n) % 26 + 'A');
-        	}
-        	answer += c;
+        char[] c = s.toCharArray();
+        for(int i = 0; i < s.length(); i++){
+            if(c[i] == ' ') {
+                answer += ' ';
+            }else{
+                int num = c[i] + n ;
+                if(c[i] > 64 && c[i] < 91  &&  num > 90){ //대문자
+                    answer += (char)(64 + (num - 90));
+                }else if(c[i] > 96 && c[i] < 123 && num > 122){ //소문자
+                    answer += (char)(96 + (num) - 122);
+                }else{
+                    answer += (char)num;
+                }
+            }
         }
         return answer;
     }
