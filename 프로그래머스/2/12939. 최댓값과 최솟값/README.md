@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 83 MB, 시간: 12.57 ms
+메모리: 65 MB, 시간: 21.97 ms
 
 ### 구분
 
@@ -12,7 +12,11 @@
 
 ### 채점결과
 
-Empty
+정확성: 100.0<br/>합계: 100.0 / 100.0
+
+### 제출 일자
+
+2024년 10월 11일 16:50:45
 
 ### 문제 설명
 
@@ -47,4 +51,4 @@ Empty
 </tbody>
       </table>
 
-> 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+> 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges

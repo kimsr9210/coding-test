@@ -1,14 +1,21 @@
 class Solution {
     public String solution(String s) {
-        String answer = "";
-        String[] str = s.split(" ");
-        int min = Integer.parseInt(str[0]);
-        int max = Integer.parseInt(str[0]);
+        String[] str = s.split(" "); //공백 제거하고 배열에 저장
+
+        int min = 0;
+        int max = 0;
         for(int i = 0; i < str.length; i++){
-            min = Math.min(Integer.parseInt(str[i]), min);
-            max = Math.max(Integer.parseInt(str[i]), max);
+            int put = Integer.parseInt(str[i]);
+            if(i == 0){
+                min = put;
+                max = put;
+            }
+
+            min = Math.min(min, put);
+            max = Math.max(max, put);
         }
-        answer = String.valueOf(min) + " " + String.valueOf(max);
+
+        String answer = min + " " + max;
         return answer;
     }
 }
