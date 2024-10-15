@@ -1,16 +1,18 @@
 class Solution {
     public int[] solution(String s) {
-        int[] answer = {0,0};
-        int before = 0; //0이 제거되기 전 길이 
-        int after = 0; //s의 현재 길이
-        while(!s.equals("1")){
-            before = s.length();
-            s = s.replaceAll("0",""); //s의 모든 0제거
-            after = s.length();
-            answer[1] += before - after;
-            s = Integer.toBinaryString(after); //이진법
-            answer[0] = ++answer[0]; 
-        }
+        int[] answer = new int [2];
+        int by = 0;
+        int result = 0;
+         while(!s.equals("1")){
+             int size = s.length(); //s의 원래 길이
+             s = s.replaceAll("0", "");
+             by += size - s.length();
+             int ss = s.length();
+             s = Integer.toBinaryString(ss);
+             result++;
+         }
+        answer[0] = result;
+        answer[1] = by;
         return answer;
     }
 }
