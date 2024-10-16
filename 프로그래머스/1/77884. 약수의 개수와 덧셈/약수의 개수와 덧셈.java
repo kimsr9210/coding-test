@@ -2,15 +2,16 @@ class Solution {
     public int solution(int left, int right) {
         int answer = 0;
         for(int i = left; i <= right; i++){
-            int cnt = 0; //약수이면 카운트 됨
-            for(int j = 1 ; j <= i; j++){
-                if(i % j == 0) cnt++;
+            int num = 0;
+            for(int j = 1; j <= i; j++){
+                if(i % j == 0) num++;
             }
-            if(cnt % 2 == 0){ //약수의 갯수가 짝수이면
-                answer+= i;
+            if(num % 2 == 0){
+                answer += i;
             }else{
                 answer -= i;
             }
+            num = 0;
         }
         return answer;
     }
