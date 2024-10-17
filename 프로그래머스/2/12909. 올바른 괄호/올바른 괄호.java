@@ -1,13 +1,14 @@
 class Solution {
     boolean solution(String s) {
+        boolean answer = true;
         int open = 0;
-        for(int i = 0; i < s.length(); i++){
+        for(int i = 0; i< s.length(); i++){
             char c = s.charAt(i);
             if(i == 0 && c == ')' || open == -1) return false;
-            if(c == '(') open++;
-            else if(c == ')') open--; //열은 만큼 닫아야함
+            open += (c == '(') ? +1 : -1;
         }
-        boolean answer = (open == 0) ? true : false; 
+        
+        if(open != 0) answer = false;
         return answer;
     }
 }
