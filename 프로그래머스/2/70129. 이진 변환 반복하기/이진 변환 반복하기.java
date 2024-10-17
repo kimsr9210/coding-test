@@ -1,18 +1,13 @@
 class Solution {
     public int[] solution(String s) {
-        int[] answer = new int [2];
-        int by = 0;
-        int result = 0;
-         while(!s.equals("1")){
-             int size = s.length(); //s의 원래 길이
-             s = s.replaceAll("0", "");
-             by += size - s.length();
-             int ss = s.length();
-             s = Integer.toBinaryString(ss);
-             result++;
-         }
-        answer[0] = result;
-        answer[1] = by;
+        int[] answer = {0,0}; //변환 횟수, 제거한 0의 갯수
+        while(!s.equals("1")){
+            int c = s.length(); //s의 길이 
+            String x = s.replaceAll("0", ""); //0제거
+            s = Integer.toBinaryString(x.length());
+            answer[1] += c - x.length();
+            answer[0] = answer[0]+1;
+        }
         return answer;
     }
 }
