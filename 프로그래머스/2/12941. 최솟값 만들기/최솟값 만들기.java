@@ -5,7 +5,7 @@ class Solution{
         Arrays.sort(A);
         Arrays.sort(B);
         for(int i = 0; i < A.length; i++){
-            answer += A[i] * B[B.length-1 - i];
+            answer += A[i] * B[B.length -1 - i];
         }
         return answer;
     }
