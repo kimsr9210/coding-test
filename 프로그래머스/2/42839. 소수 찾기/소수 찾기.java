@@ -11,10 +11,12 @@ class Solution {
         while(hashSet.iterator().hasNext()) {
         	int num = hashSet.iterator().next();
         	hashSet.remove(num);
-        	if(num == 2) answer++;
-        	if(num != 2 && isPrime1(num)) answer++;
+        	if(num == 2){
+                answer++;
+            } else if (isPrime1(num)) {
+                answer++;  
+            }
         }
-        System.out.println(answer);
         return answer;
     }
     
