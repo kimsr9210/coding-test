@@ -38,7 +38,7 @@ class Solution {
     public void check(String str, String numbers, HashSet<Integer> hashSet) {
     	int n = numbers.length();
     	if(!str.equals("")) {
-    		hashSet.add(Integer.valueOf(str)); //String을 Integer로 변환
+    		hashSet.add(Integer.parseInt(str)); //String을 Integer로 변환
     	}
     	for(int i = 0; i < n; i++) {
     		check(str + numbers.charAt(i), numbers.substring(0, i) + numbers.substring(i+1, n), hashSet);
