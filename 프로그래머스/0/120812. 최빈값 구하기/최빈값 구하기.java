@@ -12,7 +12,7 @@ class Solution {
             hashMap.merge(a,1,Integer::sum);
         }
         
-        //list.addAll(hashMap.entrySet());
+        //list.addAll(hashMap.keySet());
         list.addAll(hashMap.values());
         
         //list 정렬 
