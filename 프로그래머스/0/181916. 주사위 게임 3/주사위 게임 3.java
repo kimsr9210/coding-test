@@ -2,31 +2,22 @@ import java.util.*;
 class Solution {
     public int solution(int a, int b, int c, int d) {
         int answer = 0;
-
-        //모두 같거나 //hashMap.size() == 1
-        //모두 다르거나 //hashMap.size() == 4
-        //두가지 두가지 같거나 //hashMap.size() == 2
-        //두가지만 같고 나머지 두개는 각각 다름 //hashMap.size() == 3
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         hashMap.merge(a, 1, Integer::sum);
         hashMap.merge(b, 1, Integer::sum);
         hashMap.merge(c, 1, Integer::sum);
         hashMap.merge(d, 1, Integer::sum);
 
-        System.out.println(hashMap);
-
         if(hashMap.size() == 1) answer = 1111 * a;
 
         if(hashMap.size() == 2){
+            
             ArrayList<Integer> key = new ArrayList<>(hashMap.keySet());
-            ArrayList<Integer> value = new ArrayList<>(hashMap.values());
             Collections.sort(key);
-            Collections.sort(value);
-            if(value.get(0) == 2){
-               answer =  (key.get(1) + key.get(0)) * (key.get(1) - key.get(0));
-            }
 
-            else{
+            if(hashMap.get(key.get(0)) == 2){
+               answer =  (key.get(1) + key.get(0)) * (key.get(1) - key.get(0));
+            }else{
                 int num1 = 0;
                 int num2 = 0;
                 for(Integer k : hashMap.keySet()){
@@ -56,8 +47,6 @@ class Solution {
             }
             answer = min;
         }
-
-        System.out.println(answer);
         return answer;
     }
 }
