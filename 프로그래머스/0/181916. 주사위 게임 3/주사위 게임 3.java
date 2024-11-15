@@ -24,10 +24,7 @@ class Solution {
                     if(hashMap.get(k) == 3) num1 = k;
                     if(hashMap.get(k) == 1) num2 = k;
                 }
-
-                answer = 10 * num1;
-                answer = answer + num2;
-                answer = answer * answer;
+                answer = (10 * num1 + num2) * (10 * num1 + num2);
             }
         }
 
