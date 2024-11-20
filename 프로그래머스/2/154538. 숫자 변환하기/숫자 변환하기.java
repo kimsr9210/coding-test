@@ -1,31 +1,46 @@
+import java.util.*;
 class Solution {
-    int[] dp;
     public int solution(int x, int y, int n) {
-        int answer = 0;
-        // x를 y로 변환하기 위해 필요한 최소 연산 횟수를 return
-        dp = new int[y+1];
-        
-        for(int i=0; i<=y; i++){
-            dp[i] = Integer.MAX_VALUE;
+        int answer = -1;
+
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        //hashMap.put(1, 0); //x에 n을 더한다
+        hashMap.put(2, 0); //x에 2를 곱한다.
+        hashMap.put(3, 0); //x에 3을 곱한다.
+
+        if(x + n == y) {
+            hashMap.put(1, 1);
         }
-        
-        dp[x] = 0;
-        for(int i=x; i<=y; i++){
-            if(dp[i]==Integer.MAX_VALUE) continue;
-            if(i+n<=y){
-                dp[i+n] = Math.min(dp[i+n], dp[i]+1);
-            }
-            if(i*2<=y){
-                dp[i*2] = Math.min(dp[i*2], dp[i]+1);
-            }
-            if(i*3<=y){
-                dp[i*3] = Math.min(dp[i*3], dp[i]+1);
-            }
+
+        int num2 = x;
+        int cnt2 = 0;
+        while(num2 < y){
+            num2 = num2 * 2;
+            hashMap.put(2,hashMap.get(2)+1);
         }
-        
-        if(dp[y]==Integer.MAX_VALUE) return -1;
-        return dp[y];
+        System.out.println(cnt2);
+
+        int num3 = x;
+        int cnt3 = 0;
+        while(num3 < y){
+            num3 = num3 * 3;
+            hashMap.put(3,hashMap.get(3)+1);
+        }
+        System.out.println(hashMap);
+
+        if(num2 != y) hashMap.remove(2);
+        if(num3 != y) hashMap.remove(3);
+
+        if(hashMap.size() > 0){
+            int min = Integer.MAX_VALUE;
+            for(Integer key : hashMap.keySet()){
+                min = Math.min(hashMap.get(key),min);
+            }
+            answer = min;
+        }
+
+        System.out.println(hashMap);
+        System.out.println(answer);
+        return answer;
     }
-    
-    
 }
