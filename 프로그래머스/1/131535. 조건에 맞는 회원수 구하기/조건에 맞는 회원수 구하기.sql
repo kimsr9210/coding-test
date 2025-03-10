@@ -2,7 +2,8 @@
 --TO_DATE () : 문자열을 날짜 형식으로 변환
 --TO_DATE('날짜문자열', '날짜형식')
 --TO_DATE('2021-01-01', 'yyyy-mm-dd')
-SELECT COUNT(*)USERS FROM USER_INFO 
-WHERE JOINED BETWEEN TO_DATE('2021-01-01', 'YYYY-MM-DD') AND TO_DATE('2021-12-31', 'YYYY-MM-DD')
-AND AGE BETWEEN 20 AND 29
-;
+SELECT COUNT(*) AS USER_COUNT
+FROM USER_INFO
+WHERE JOINED BETWEEN to_date('2021-01-01', 'yyyy-mm-dd') 
+                AND to_date('2021-12-31', 'yyyy-mm-dd')
+  AND AGE BETWEEN 20 AND 29;
