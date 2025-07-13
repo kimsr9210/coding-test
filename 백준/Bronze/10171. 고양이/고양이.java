@@ -4,7 +4,7 @@ public class Main {
 		System.out.println("\\    /\\");
 		System.out.println(" )  ( ')");
 		System.out.println("(  /  )");
-		System.out.println(" \\(__)|");    
+		System.out.println(" \\(__)|");    //고양이 완성
  
 	}
 }
