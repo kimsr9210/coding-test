@@ -22,7 +22,7 @@ class Solution {
         				max.clear();
         				max.addAll(min);
         			}
-        			if(num == 1) { //理쒕�媛� �궘�젣 //
+        			if(num == 1) { //理쒕�媛� �궘�젣 //////
         				max.poll();
         				min.clear();
         				min.addAll(max);
