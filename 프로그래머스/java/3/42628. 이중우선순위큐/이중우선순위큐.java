@@ -3,7 +3,7 @@ class Solution {
     public int[] solution(String[] operations) {
         int[] answer = {0,0};
         
-        //우선순위 큐 : 우선순위가 높은 데이터가 먼저 나가는 형태의 자료구조
+        //�슦�꽑�닚�쐞 �걧 : �슦�꽑�닚�쐞媛� �넂�� �뜲�씠�꽣媛� 癒쇱� �굹媛��뒗 �삎�깭�쓽 �옄猷뚭뎄議�
         Queue<Integer> min = new PriorityQueue<>();
         Queue<Integer> max = new PriorityQueue<>(Collections.reverseOrder());
         
@@ -17,12 +17,12 @@ class Solution {
         			max.add(num);
         			break;
         		case "D" :
-        			if(num == -1) { //최소값 삭제
+        			if(num == -1) { //理쒖냼媛� �궘�젣
         				min.poll();
         				max.clear();
         				max.addAll(min);
         			}
-        			if(num == 1) { //최대값 삭제
+        			if(num == 1) { //理쒕�媛� �궘�젣 //
         				max.poll();
         				min.clear();
         				min.addAll(max);
