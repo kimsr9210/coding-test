@@ -12,7 +12,7 @@ class Solution {
         	int num = Integer.parseInt(operations[i].substring(2,operations[i].length()));
 
         	switch(math) {
-        	//Test
+        	//Test22
         		case "I" : 
         			min.add(num);
         			max.add(num);
