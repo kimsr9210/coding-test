@@ -17,7 +17,7 @@ class Solution {
         			max.add(num);
         			break;
         		case "D" :
-        			if(num == -1) { //理쒖냼媛� �궘�젣
+        			if(num == -1) { //理쒖냼媛� �궘�젣 ㅅㄷㄴㅅ
         				min.poll();
         				max.clear();
         				max.addAll(min);
